@@ -108,7 +108,7 @@ export default function withApollo<TCache = any>(
       }
 
       public render() {
-        return <App {...this.props} apollo={this.apollo} />;
+        return <App {...this.props as any} apollo={this.apollo} />;
       }
     };
   };

@@ -1,7 +1,7 @@
 import ApolloClient from 'apollo-client';
 import { IncomingHttpHeaders } from 'http';
 import { NextContext } from 'next';
-import { AppComponentContext, AppComponentProps } from 'next/app';
+import { AppProps, NextAppContext } from 'next/app';
 import { DefaultQuery } from 'next/router';
 
 declare global {
@@ -20,7 +20,7 @@ export interface WithApolloState<TCache> {
   data?: TCache;
 }
 
-export interface WithApolloProps<TCache> extends AppComponentProps {
+export interface WithApolloProps<TCache> extends AppProps {
   apollo: ApolloClient<TCache>;
   apolloState: WithApolloState<TCache>;
 }
@@ -34,13 +34,14 @@ export type InitApolloClient<TCache> = ((
   options: InitApolloOptions<TCache>
 ) => ApolloClient<TCache>);
 
-export interface AppContext<Q = DefaultQuery> extends NextContext<Q> {
+export interface AppContext<Q extends DefaultQuery = DefaultQuery>
+  extends NextContext<Q> {
   // Custom prop added by withApollo
   apolloClient: ApolloClient<any>;
 }
 
-export interface ApolloContext<Q = DefaultQuery>
-  extends AppComponentContext<Q> {
+export interface ApolloContext<Q extends DefaultQuery = DefaultQuery>
+  extends NextAppContext<Q> {
   ctx: AppContext<Q>;
 }
 
