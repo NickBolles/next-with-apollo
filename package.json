@@ -27,11 +27,18 @@
     "singleQuote": true
   },
   "peerDependencies": {
-    "react": "^15.0.0 || ^16.0.0"
+    "react": "^15.0.0 || ^16.0.0",
+    "apollo-client": "^2.4.0",
+    "graphql": "^14.0.0",
+    "next": "^6.0.0"
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",
     "@types/node": "^10.5.1",
+    "@types/graphql": "0.12.7",
+    "@types/next": "^6.0.0",
+    "@types/prop-types": "^15.5.2",
+    "@types/react": "^16.3.14",
     "jest": "^23.3.0",
     "prettier": "^1.13.7",
     "react": "^16.3.2",
@@ -43,16 +50,9 @@
     "typescript": "^2.9.2"
   },
   "dependencies": {
-    "@types/graphql": "0.12.7",
-    "@types/next": "^6.0.4",
-    "@types/prop-types": "^15.5.2",
-    "@types/react": "^16.3.14",
-    "apollo-client": "^2.4.1",
-    "graphql": "0.13.2",
     "isomorphic-unfetch": "^2.0.0",
-    "next": "^6.0.0",
     "prop-types": "^15.6.2",
-    "react-apollo": "^2.1.9",
+    "react-apollo": "^2.2.0",
     "react-dom": "^16.3.2"
   }
 }
